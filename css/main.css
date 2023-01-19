@@ -1,0 +1,181 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+body {
+    background: #ffffff;
+    font-family: 'Coda', cursive;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 1000;
+}
+
+/*
+ * Styles for the deck of cards
+ */
+
+#deck {
+    width: 660px;
+    min-height: 680px;
+    background: linear-gradient(160deg, #cacaca 0%, #aa7ecd 100%);
+    padding: 32px;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 5px;
+    border-color: #2e3d49;
+    box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    margin: 0 0 3em;
+}
+
+#deck .card {
+    height: 125px;
+    width: 125px;
+    background: #2e3d49;
+    font-size: 0;
+    color: #2e3d49;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+    transition: all ease-in-out .5s;
+}
+
+#deck .card.open {
+    background: #4e754e;
+    cursor: default;
+    color: #ff00c8;
+}
+
+#deck .card.show {
+    font-size: 50px;
+    color: #ff00c8;
+}
+
+#deck .card.match {
+    cursor: default;
+    background: #02ccba;
+    font-size: 50px;
+}
+
+/*
+ * Styles for the Score Panel
+ */
+
+#score-panel {
+    text-align: left;
+    width: 345px;
+    margin-bottom: 10px;
+}
+
+#stars {
+    display: flex;
+}
+
+#score-panel .stars {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    margin: 0 5px 0 0;
+}
+
+#score-panel .stars li {
+    list-style: none;
+    display: inline-block;
+}
+
+#restart {
+    float: right;
+    cursor: pointer;
+}
+
+.fa-solid {
+    font-size: 2rem;
+}
+
+/*
+ * Responsiveness
+ */
+
+@media only screen and (max-width: 800px) {
+    #deck .card {
+        width: 75px;
+        height: 75px;
+        line-height: 75px;
+    }
+
+    #deck {
+        width: 500px;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    #deck .card {
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+    }
+
+    #deck {
+        width: 300px;
+    }
+}
